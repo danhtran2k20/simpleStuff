@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Multimedia</title>
+
+    <style>
+        .svgRec {
+            border: 1px solid #666;
+            width: 400px;
+            height: 300px;
+        }
+
+        .svgRec rect {
+            width: 150px;
+            height: 150px;
+
+            fill: red;
+            stroke: black;
+            stroke-width: 4px;
+        }
+
+        .svgCircle {
+            width: 400px;
+            height: 300px;
+        }
+
+        .svgCircle circle {
+            fill: red;
+        }
+
+        .svgCircle text {
+            fill: #fff;
+            font-size: 70px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <!-- 
+        NOTE video, audio
+            có thể để scr trong video nhưng ko nên 
+            1 số trình duyệt phải muted mới cho autoplay
+            preload và autoplay mâu thuẫn nhau
+            có thể thêm nhiều source như 1 dạng backup, chỉ 1st chạy
+    -->
+    <video width="240" height="120" controls preload="none" loop="true" autoplay muted>
+        <source src="./asset/demo_vids.mp4" type="video/mp4">
+    </video>
+
+    <!-- NOTE audio note như video -->
+    <audio controls>
+        <source src="/asset/demo_audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- NOTE svg - thẻ không phổ biến, vscode ko nhắc, tự close tag bằng extension-->
+    <!-- rect svg -->
+    <br>
+    <svg class="svgRec">
+        <rect x="100px" y="50px" rx="10px" ry="10px"></rect>
+    </svg>
+    <!-- circle svg -->
+    <svg class="svgCircle">
+        <circle cx="200px" cy="150px" r="80px"></circle>
+        <text x="150px" y="172px">Hi</text>
+    </svg>
+
+    <br>
+    <!-- NOTE Canvas - dùng nhiều trong game hơn -->
+    <canvas id="demoCanvas" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+    <script type="text/javascript">
+        c = document.getElementById('demoCanvas')
+        ctx = c.getContext('2d')
+        ctx.moveTo(0, 0)
+        ctx.lineTo(200, 100)
+        ctx.stroke()
+    </script>
+</body>
+
+</html>
