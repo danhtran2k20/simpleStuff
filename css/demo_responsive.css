@@ -1,0 +1,54 @@
+/* code mặc định */
+.desktop-first {
+  background-color: red;
+}
+
+/* 
+    @max width dùng với style desktop first 
+    ngoài screen còn có media, print, all
+    Luôn để dưới code mặc định để đè code default
+    để đúng thứ tự, lớn trước và nhỏ dần phía sau 
+        - desktop first
+
+*/
+@media screen and (max-width: 1200px) {
+  /* Nhỏ hơn bằng <= 1200px */
+  .desktop-first {
+    background-color: purple;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* Nhỏ hơn bằng <= 992px */
+  .desktop-first {
+    background-color: pink;
+  }
+}
+
+/* ========================================= */
+
+.mobile-first {
+  background-color: blue;
+}
+
+@media screen and (min-width: 576px) {
+  /* Lớn hơn bằng 576px >= */
+  .mobile-first {
+    background-color: violet;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Lớn hơn bằng 768px >= */
+  .mobile-first {
+    background-color: yellowgreen;
+  }
+}
+
+/* 
+
+Về lý thuyết mobile first tiện responsive hơn - thêm dần, hạn chế thừa code, mất thgian
+Desktop first dể thêm quá nhiều ele do màn hình lớn, xuống mobile phải bỏ nhiều
+Tuy nhiên thực tế thì linh động tùy thiết kế , thói quen ...
+
+*/
