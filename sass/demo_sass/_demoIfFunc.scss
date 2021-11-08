@@ -1,0 +1,88 @@
+.up {
+  display: inline-block;
+  border-width: 50px;
+
+  border-style: solid;
+  border-color: transparent;
+
+  border-bottom-color: black;
+}
+
+.down {
+  display: inline-block;
+  border-width: 50px;
+
+  border-style: solid;
+  border-color: transparent;
+
+  border-top-color: black;
+}
+
+.right {
+  display: inline-block;
+  border-width: 50px;
+
+  border-style: solid;
+  border-color: transparent;
+
+  border-left-color: black;
+}
+
+.left {
+  display: inline-block;
+  border-width: 50px;
+
+  border-style: solid;
+  border-color: transparent;
+
+  border-right-color: black;
+}
+
+@mixin arrow($size, $direction, $color) {
+  display: inline-block;
+  border-width: $size;
+
+  border-style: solid;
+  border-color: transparent;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else {
+    @error "Unknown direction: #{$direction}.";
+  }
+}
+
+.upMixin {
+  @include arrow(20px, up, red);
+}
+
+.downMixin {
+  @include arrow(20px, down, yellow);
+}
+
+.rightMixin {
+  @include arrow(20px, right, blue);
+}
+
+.leftMixin {
+  @include arrow(20px, left, green);
+}
+
+// === function ===
+// mixin ko trả về giá trị
+@function parseRem($default, $val) {
+  $rem: $val * 1 / $default;
+  @return #{$rem}rem;
+}
+
+// font-size: 32px
+
+h2 {
+  font-size: parseRem(16, 32);
+}
