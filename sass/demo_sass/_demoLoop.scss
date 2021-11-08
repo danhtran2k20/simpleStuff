@@ -1,0 +1,85 @@
+// for
+
+// .col-12{
+//     width:100%;
+// }
+// .col-6{
+//     width: 50%;
+// }
+
+$number: 1;
+$numStart: 1;
+$numEnd: 13;
+
+// === @for $number from start to end ===
+// [start ; end)
+// 1<= $number < 13
+// ===
+
+@for $number from 1 to $numEnd {
+  .col-#{$number} {
+    width: 100% * $number / $numEnd;
+  }
+  $number: $number + 1;
+}
+
+//   Gán giá trị trong SCSS dùng toán tử :, ko dùng =
+//   Phải tự gán
+
+// ===  for from through ===
+// 1<= $number <= 12
+// ===
+
+// @for $number from 1 through 12{
+//     .col-#{$number}{
+//                 width: 100% * $number / 12;
+//             }
+//             $number:$number + 1;
+// }
+
+// === while condition
+
+// @while $number <13 {
+//   .col-#{$number} {
+//     width: 100% * $number / 12;
+//   }
+//   $number: $number + 1;
+// }
+
+// === === === === === === === === === ===
+
+// each
+// Khai báo biến mảng trong SCSS
+$icons: (
+  "book": "\f2b9",
+  "card": "\f2bb",
+);
+
+// Cách font awesome định nghĩa icon:
+
+// .icon-book:before{
+//     content: "\f2b9";
+// }
+
+// @each $var in list
+
+// Tạo class với tên gọi riêng thay thế class font Awesome đặt
+// -> Ví dụ tự tạo class tên riêng để gọi font awesome khi ko nhớ
+@each $name, $code in $icons {
+  .icon-#{$name}::before {
+    content: $code;
+  }
+}
+
+// === ex2 ===
+$sizes: 40px, 50px, 80px;
+// vẫn là chuỗi string
+// scss ko tự tách px ra khỏi chuỗi và ocnvert thành giá trị
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+}

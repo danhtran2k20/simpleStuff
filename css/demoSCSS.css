@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.col-1 {
+  width: 7.69231%;
+}
+
+.col-2 {
+  width: 15.38462%;
+}
+
+.col-3 {
+  width: 23.07692%;
+}
+
+.col-4 {
+  width: 30.76923%;
+}
+
+.col-5 {
+  width: 38.46154%;
+}
+
+.col-6 {
+  width: 46.15385%;
+}
+
+.col-7 {
+  width: 53.84615%;
+}
+
+.col-8 {
+  width: 61.53846%;
+}
+
+.col-9 {
+  width: 69.23077%;
+}
+
+.col-10 {
+  width: 76.92308%;
+}
+
+.col-11 {
+  width: 84.61538%;
+}
+
+.col-12 {
+  width: 92.30769%;
+}
+
+.icon-book::before {
+  content: "";
+}
+
+.icon-card::before {
+  content: "";
+}
+
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+}
+/*# sourceMappingURL=demoSCSS.css.map */
